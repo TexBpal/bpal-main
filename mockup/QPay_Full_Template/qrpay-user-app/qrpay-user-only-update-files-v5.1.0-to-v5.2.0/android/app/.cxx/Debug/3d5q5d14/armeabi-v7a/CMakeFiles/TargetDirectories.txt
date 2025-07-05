@@ -1,0 +1,2 @@
+D:/All Qrpay/Qrpay-User-App/android/app/.cxx/Debug/3d5q5d14/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/All Qrpay/Qrpay-User-App/android/app/.cxx/Debug/3d5q5d14/armeabi-v7a/CMakeFiles/rebuild_cache.dir
