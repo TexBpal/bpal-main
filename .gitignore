@@ -1,0 +1,16 @@
+# macOS systemfiler
+.DS_Store
+
+# Flutter/Dart
+.dart_tool/
+build/
+.idea/
+
+# Konfig & nycklar
+*.key.dart
+*.env
+*.json
+
+# Loggar & temporära filer
+*.log
+statuslog.txt
