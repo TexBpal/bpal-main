@@ -1,4 +1,3 @@
-cat > .github/workflows/api.yml << 'EOF'
 name: Check Cryptomate API Integration
 
 on:
@@ -21,4 +20,3 @@ jobs:
             echo "❌ cryptomate_config.json missing!"
             exit 1
           fi
-EOF

@@ -1,29 +1,20 @@
-cat > .github/workflows/test-cryptomate.yml << 'EOF'
-name: Test Cryptomate Secrets
+name: Run Cryptomate Secret Test
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  test-secrets:
+  test-cryptosecret:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Test Cryptomate secrets availability
+      - name: Test secret access
         run: |
-          echo "🔐 Testing availability of CRYPTOMATE secrets..."
-          for i in 1 2 3 4
-          do
-            NAME="CRYPTOMATE$i"
-            VALUE="${{ secrets[format('CRYPTOMATE%s', i)] }}"
-            if [ -n "$VALUE" ]; then
-              echo "✅ $NAME is available"
-            else
-              echo "❌ $NAME is NOT available"
-            fi
-          done
-EOF
+          if [ -z "${{ secrets.CRYPTOMATE_SECRET }}" ]; then
+            echo "❌ CRYPTOMATE_SECRET is not set!"
+            exit 1
+          else
+            echo "✅ Secret is set and accessible."
+          fi
