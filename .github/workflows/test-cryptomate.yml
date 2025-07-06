@@ -1,3 +1,4 @@
+cat > .github/workflows/test-cryptomate.yml << 'EOF'
 name: Test Cryptomate Secrets
 
 on:
@@ -25,3 +26,4 @@ jobs:
               echo "❌ $NAME is NOT available"
             fi
           done
+EOF

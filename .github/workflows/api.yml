@@ -1,0 +1,24 @@
+cat > .github/workflows/api.yml << 'EOF'
+name: Check Cryptomate API Integration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify cryptomate_config.json exists
+        run: |
+          if [ -f "./api/cryptomate_config.json" ]; then
+            echo "✅ cryptomate_config.json found!"
+          else
+            echo "❌ cryptomate_config.json missing!"
+            exit 1
+          fi
+EOF
