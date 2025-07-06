@@ -9,19 +9,19 @@ jobs:
   test-secrets:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Test secrets availability
+      - name: Test Cryptomate secrets availability
         run: |
-          echo "Testing CRYPTOMATE secrets..."
-          for i in "" 1 2 3 4
+          echo "🔐 Testing availability of CRYPTOMATE secrets..."
+          for i in 1 2 3 4
           do
             NAME="CRYPTOMATE$i"
             VALUE="${{ secrets[format('CRYPTOMATE%s', i)] }}"
             if [ -n "$VALUE" ]; then
-              echo "$NAME is available ✅"
+              echo "✅ $NAME is available"
             else
-              echo "$NAME is NOT available ❌"
+              echo "❌ $NAME is NOT available"
             fi
           done
