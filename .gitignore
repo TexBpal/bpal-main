@@ -1,25 +1,25 @@
-# macOS system files
+# macOS
 .DS_Store
 
-# Logs and status files
-statuslog.txt
-
-# VS Code settings
+# VS Code
 .vscode/
 
-# Node modules (if applicable)
+# Node (om tillämpbart i framtiden)
 node_modules/
 
-# Flutter/Dart specific (if Dart is ever used again)
+# Dart (legacy från Flutter)
 .dart_tool/
 .packages
 build/
 .idea/
 
-# Environment files (secrets)
+# Secrets
 .env
 .env.*
 
-# Other
+# Logs och tillfälliga filer
 *.log
 *.tmp
+
+# Gamla loggar
+statuslog.txt
