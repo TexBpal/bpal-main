@@ -1,35 +1,40 @@
-# QPay Full Template – BPAL Setup
+# BPAL-MAIN
 
-Detta repository innehåller en strukturerad version av QPay-mallen, anpassad för vidareutveckling under BPAL-projektet. Filstrukturen är nu uppdelad i tre huvudområden:
+This is the core repository for the BPAL system.
 
-## 📦 Strukturell översikt
+## 📁 Project Structure
 
-/
-├── archive/ # Arkivmaterial och äldre versioner
-│ ├── mockup/QPay_Full_Template/
-│ └── old-versions-[v2.5.0-v5.1.0]/
-│
-├── modules/ # Aktiva moduler för QPay
-│ ├── qpay-user-app/
-│ └── qpay-web/
-│
-├── docs/ # Dokumentation
-│ └── qpray-documentations.html
-│
-├── lib/ # Nuvarande utvecklingskod (.dart)
-├── .github/ # GitHub metadata
+BPAL-MAIN/
+├── .github/
+│ └── workflows/
+│ ├── api.yml
+│ └── test-cryptomate.yml
+├── archive/
+├── docs/
+├── lib/
+├── mockup/
+├── modules/
 ├── .gitignore
 └── README.md
 
-## 🔧 Syfte
+## ⚙️ GitHub Actions Workflows
 
-Detta projekt fungerar som bas för vidare uppbyggnad av:
-- QR-betalningar
-- Walletintegration
-- Automatiseringsflöden via n8n, Make och Replit
+### `api.yml`
+- **Checks** if `cryptomate_config.json` exists in the `api/` directory.
+- Triggered on: `push` to `main`.
 
-## 🛠️ Nästa steg
+### `test-cryptomate.yml`
+- **Checks** if a GitHub secret `CRYPTOMATE_SECRET` is set and accessible.
+- Triggered on: `push` to `main`.
 
-- Koppla moduler till kodbasen
-- Rensa Flutter-spår
-- API-integrationer och säkerhetskontroller
+## ✅ Setup Checklist
+
+- [x] `.github/workflows/` structure verified
+- [x] `api.yml` and `test-cryptomate.yml` committed
+- [x] GitHub Secrets configured
+- [x] Push triggers tested
+
+---
+
+## ✅ Test run for GitHub Actions – 2025-07-06
+
