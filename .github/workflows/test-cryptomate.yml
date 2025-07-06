@@ -1,0 +1,27 @@
+name: Test Cryptomate Secrets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Test secrets availability
+        run: |
+          echo "Testing CRYPTOMATE secrets..."
+          for i in "" 1 2 3 4
+          do
+            NAME="CRYPTOMATE$i"
+            VALUE="${{ secrets[format('CRYPTOMATE%s', i)] }}"
+            if [ -n "$VALUE" ]; then
+              echo "$NAME is available ✅"
+            else
+              echo "$NAME is NOT available ❌"
+            fi
+          done
