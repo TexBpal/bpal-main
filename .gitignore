@@ -1,16 +1,25 @@
-# macOS systemfiler
+# macOS system files
 .DS_Store
 
-# Flutter/Dart
+# Logs and status files
+statuslog.txt
+
+# VS Code settings
+.vscode/
+
+# Node modules (if applicable)
+node_modules/
+
+# Flutter/Dart specific (if Dart is ever used again)
 .dart_tool/
+.packages
 build/
 .idea/
 
-# Konfig & nycklar
-*.key.dart
-*.env
-*.json
+# Environment files (secrets)
+.env
+.env.*
 
-# Loggar & temporära filer
+# Other
 *.log
-statuslog.txt
+*.tmp
