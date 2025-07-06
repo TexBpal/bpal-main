@@ -1,28 +1,35 @@
-# QPay Full Template
+# QPay Full Template – BPAL Setup
 
-This is a secure GitHub-based UI and API template for the QPay Wallet System.
+Detta repository innehåller en strukturerad version av QPay-mallen, anpassad för vidareutveckling under BPAL-projektet. Filstrukturen är nu uppdelad i tre huvudområden:
 
-## 🚫 No Flutter or external UI frameworks
-- All code is written in pure Dart
-- Uses VS Code + GitHub only
-- Safe for banking-level security needs
+## 📦 Strukturell översikt
 
-## 📂 Folder structure
-mockup/QPay_Full_Template/
-├── lib/
-│ ├── home.dart
-│ ├── log.dart
-│ ├── main.dart
-│ ├── navigate.dart
-│ ├── set.dart
-│ └── crypto_api_config.dart
+/
+├── archive/ # Arkivmaterial och äldre versioner
+│ ├── mockup/QPay_Full_Template/
+│ └── old-versions-[v2.5.0-v5.1.0]/
+│
+├── modules/ # Aktiva moduler för QPay
+│ ├── qpay-user-app/
+│ └── qpay-web/
+│
+├── docs/ # Dokumentation
+│ └── qpray-documentations.html
+│
+├── lib/ # Nuvarande utvecklingskod (.dart)
+├── .github/ # GitHub metadata
 ├── .gitignore
-├── README.md
-└── statuslog.txt
+└── README.md
 
-## 🛠️ Setup instructions
+## 🔧 Syfte
 
-1. Clone this repository  
-2. Open in **VS Code**  
-3. Update `crypto_api_config.dart` with your secure keys  
-4. Launch `main.dart` manually (no Flutter or external frameworks)
+Detta projekt fungerar som bas för vidare uppbyggnad av:
+- QR-betalningar
+- Walletintegration
+- Automatiseringsflöden via n8n, Make och Replit
+
+## 🛠️ Nästa steg
+
+- Koppla moduler till kodbasen
+- Rensa Flutter-spår
+- API-integrationer och säkerhetskontroller
