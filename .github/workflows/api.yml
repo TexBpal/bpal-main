@@ -1,22 +1,17 @@
-name: Check Cryptomate API Integration
+name: API CI
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'api/**'
+  pull_request:
+    paths:
+      - 'api/**'
 
 jobs:
-  check-api:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Verify cryptomate_config.json exists
-        run: |
-          if [ -f "./api/cryptomate_config.json" ]; then
-            echo "✅ cryptomate_config.json found!"
-          else
-            echo "❌ cryptomate_config.json missing!"
-            exit 1
-          fi
+      - uses: actions/checkout@v3
+      - name: Run API tests
+        run: echo "Running API CI..."

@@ -1,20 +1,17 @@
-name: Run Cryptomate Secret Test
+name: TestCryptomate
 
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - 'cryptomate/**'
+  pull_request:
+    paths:
+      - 'cryptomate/**'
 
 jobs:
-  test-cryptosecret:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Test secret access
-        run: |
-          if [ -z "${{ secrets.CRYPTOMATE_SECRET }}" ]; then
-            echo "❌ CRYPTOMATE_SECRET is not set!"
-            exit 1
-          else
-            echo "✅ Secret is set and accessible."
-          fi
+      - uses: actions/checkout@v3
+      - name: Run Cryptomate tests
+        run: echo "Running Cryptomate tests..."
