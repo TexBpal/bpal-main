@@ -1,40 +1,49 @@
+cat <<EOF > README.md
 # BPAL-MAIN
 
-This is the core repository for the BPAL system.
+## 📦 GitHub Actions Workflows
 
-## 📁 Project Structure
+### `.github/workflows/`
 
-BPAL-MAIN/
-├── .github/
-│ └── workflows/
-│ ├── api.yml
-│ └── test-cryptomate.yml
-├── archive/
-├── docs/
-├── lib/
-├── mockup/
-├── modules/
-├── .gitignore
-└── README.md
-
-## ⚙️ GitHub Actions Workflows
-
-### `api.yml`
-- **Checks** if `cryptomate_config.json` exists in the `api/` directory.
-- Triggered on: `push` to `main`.
-
-### `test-cryptomate.yml`
-- **Checks** if a GitHub secret `CRYPTOMATE_SECRET` is set and accessible.
-- Triggered on: `push` to `main`.
-
-## ✅ Setup Checklist
-
-- [x] `.github/workflows/` structure verified
-- [x] `api.yml` and `test-cryptomate.yml` committed
-- [x] GitHub Secrets configured
-- [x] Push triggers tested
+- `api.yml` → Triggar på ändringar i `api/**`
+- `test-cryptomate.yml` → Testar `CRYPTOMATE_SECRET` från GitHub Secrets
 
 ---
 
-## ✅ Test run for GitHub Actions – 2025-07-06
+## ✅ Setup Checklist
 
+- [x] `.github/workflows/` är korrekt uppsatt
+- [x] Workflows: `api.yml`, `test-cryptomate.yml`
+- [x] GitHub Secret `CRYPTOMATE_SECRET` är aktiv
+- [x] Push-triggers fungerar
+
+---
+
+## 🧪 Testkörning – 2025-07-06
+
+| Workflow              | Resultat | Kommentar                                |
+|-----------------------|----------|-------------------------------------------|
+| `api.yml`             | ✅ OK    | Hittade `cryptomate_config.json` korrekt |
+| `test-cryptomate.yml` | ✅ OK    | Läste `CRYPTOMATE_SECRET` utan problem    |
+
+---
+
+## 🗂️ Struktur
+
+```bash
+BPAL-MAIN/
+├── .github/
+│   └── workflows/
+│       ├── api.yml
+│       └── test-cryptomate.yml
+├── mockup/
+│   ├── QPay Full Template/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   └── script.js
+│   └── mockupreadme.md
+├── archive/
+├── docs/
+├── lib/
+├── modules/
+└── README.md
