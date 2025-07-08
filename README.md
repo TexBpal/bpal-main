@@ -33,17 +33,28 @@ cat <<EOF > README.md
 ```bash
 BPAL-MAIN/
 ├── .github/
-│   └── workflows/
-│       ├── api.yml
-│       └── test-cryptomate.yml
-├── mockup/
-│   ├── QPay Full Template/
-│   │   ├── index.html
-│   │   ├── style.css
-│   │   └── script.js
-│   └── mockupreadme.md
+│ └── workflows/
+│ ├── api.yml
+│ └── test-cryptomate.yml
 ├── archive/
 ├── docs/
 ├── lib/
+│ ├── crypto_api_config.dart
+│ ├── home.dart
+│ ├── log.dart
+│ ├── main.dart
+│ ├── navigate.dart
+│ └── set.dart
+├── index.html
+├── style.css
+├── script.js
+├── statuslog.txt
+├── mockup/
+│ └── QPay_Full_Template/
+│ ├── qrpay-user-app/
+│ ├── qrpay-web/
+│ ├── qrpay-documentation.html
+│ └── old-versions-[v2.5.0–v5.1.0]/
 ├── modules/
-└── README.md
+├── README.md
+└── .gitignore
