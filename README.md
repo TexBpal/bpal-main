@@ -1,60 +1,23 @@
-cat <<EOF > README.md
-# BPAL-MAIN
+# BPAL Template Overview
 
-## 📦 GitHub Actions Workflows
-
-### `.github/workflows/`
-
-- `api.yml` → Triggar på ändringar i `api/**`
-- `test-cryptomate.yml` → Testar `CRYPTOMATE_SECRET` från GitHub Secrets
+This repository contains the full source and patch files for QPay template system v5.2.0.
 
 ---
 
-## ✅ Setup Checklist
+## 📁 Project Structure
 
-- [x] `.github/workflows/` är korrekt uppsatt
-- [x] Workflows: `api.yml`, `test-cryptomate.yml`
-- [x] GitHub Secret `CRYPTOMATE_SECRET` är aktiv
-- [x] Push-triggers fungerar
-
----
-
-## 🧪 Testkörning – 2025-07-06
-
-| Workflow              | Resultat | Kommentar                                |
-|-----------------------|----------|-------------------------------------------|
-| `api.yml`             | ✅ OK    | Hittade `cryptomate_config.json` korrekt |
-| `test-cryptomate.yml` | ✅ OK    | Läste `CRYPTOMATE_SECRET` utan problem    |
-
----
-
-## 🗂️ Struktur
-
-```bash
-BPAL-MAIN/
-├── .github/
-│ └── workflows/
-│ ├── api.yml
-│ └── test-cryptomate.yml
-├── archive/
-├── docs/
-├── lib/
-│ ├── crypto_api_config.dart
-│ ├── home.dart
-│ ├── log.dart
-│ ├── main.dart
-│ ├── navigate.dart
-│ └── set.dart
-├── index.html
-├── style.css
-├── script.js
-├── statuslog.txt
-├── mockup/
-│ └── QPay_Full_Template/
-│ ├── qrpay-user-app/
-│ ├── qrpay-web/
-│ ├── qrpay-documentation.html
-│ └── old-versions-[v2.5.0–v5.1.0]/
-├── modules/
-├── README.md
-└── .gitignore
+```text
+mockup/QPay_Full_Template/
+├── qrpay-web/
+│   ├── unpacked-new–v5.2.0/
+│   ├── unpacked-update–v5.2.0/
+│   ├── qrpay-web-new-file-v5.2.0.zip
+│   ├── qrpay-web-update-file-v5.1.0-to-v5.2.0.zip
+│   └── UNPACKED_README.md
+│
+├── qrpay-user-app/
+│   ├── qrpay-user-app-new–v5.2.0/
+│   ├── qrpay-user-only-update-files-v5.1.0-to-v5.2.0.zip
+│   └── UNPACKED_README_USER.md
+│
+└── old-versions-[v2.5.0–v5.1.0]/
